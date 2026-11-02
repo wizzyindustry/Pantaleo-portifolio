@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emanuel Pantaleo - Admin Dashboard">
+    <title>Dashboard | Emanuel Pantaleo</title>
+    <link rel="stylesheet" href="/css/admin.css" type="text/css">
+    <link rel="icon" href="/assets/icons/panta logo-07.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <a href="/index.html"><img src="/assets/icons/panta logo-01.jpg" loading="lazy" alt="emanuel logo"></a>
+            <h2>Emanuel Pantaleo <span>Admin Panel</span></h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-section-title">Main</p>
+            <a href="/admin/dashboard.html" class="active"><i class="uil uil-estate"></i>Dashboard</a>
+            <a href="/pages/work.html"><i class="uil uil-briefcase-alt"></i>Projects</a>
+            <a href="/pages/contact.html"><i class="uil uil-envelope"></i>Messages</a>
+            <p class="nav-section-title">Manage</p>
+            <a href="/pages/about.html"><i class="uil uil-user"></i>Profile</a>
+            <a href="/pages/gallary.html"><i class="uil uil-image-v"></i>Gallery</a>
+            <a href="/admin/settings.html"><i class="uil uil-setting"></i>Settings</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="/index.html"><i class="uil uil-globe"></i>View Site</a>
+            <a href="/index.html" class="logout" id="logoutBtn"><i class="uil uil-sign-out-alt"></i>Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="main-area">
+        <header class="topbar">
+            <div class="topbar-title">
+                <button class="menu-btn" id="menuBtn"><i class="uil uil-bars"></i></button>
+                <h3>Dashboard</h3>
+                <p>Welcome back, Emanuel</p>
+            </div>
+            <div class="topbar-actions">
+                <div class="topbar-search">
+                    <i class="uil uil-search"></i>
+                    <input type="search" placeholder="Search...">
+                </div>
+                <button class="icon-btn" title="Notifications">
+                    <i class="uil uil-bell"></i>
+                    <span class="dot"></span>
+                </button>
+                <div class="admin-user">
+                    <img src="/assets/icons/panta logo-01.jpg" alt="admin avatar">
+                    <div class="admin-user-info">
+                        <b>Emanuel Pantaleo</b>
+                        <span>Administrator</span>
+                    </div>
+                    <i class="uil uil-angle-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div>
+                    <h2>Overview</h2>
+                    <p>Here is what is happening with your portfolio today.</p>
+                </div>
+                <button class="btn btn-primary" onclick="showToast('New project created successfully')"><i
+                        class="uil uil-plus"></i>New Project</button>
+            </div>
+
+            <!-- Stats -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon cyan"><i class="uil uil-briefcase-alt"></i></div>
+                    <div class="stat-info">
+                        <h4>Total Projects</h4>
+                        <p class="stat-value" data-count="24">0</p>
+                        <span class="stat-trend up"><i class="uil uil-arrow-up"></i>+12% this month</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="uil uil-eye"></i></div>
+                    <div class="stat-info">
+                        <h4>Website Visits</h4>
+                        <p class="stat-value" data-count="1893">0</p>
+                        <span class="stat-trend up"><i class="uil uil-arrow-up"></i>+24% this week</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green"><i class="uil uil-envelope"></i></div>
+                    <div class="stat-info">
+                        <h4>Messages</h4>
+                        <p class="stat-value" data-count="38">0</p>
+                        <span class="stat-trend down"><i class="uil uil-arrow-down"></i>-3 this month</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple"><i class="uil uil-users-alt"></i></div>
+                    <div class="stat-info">
+                        <h4>Happy Clients</h4>
+                        <p class="stat-value" data-count="18">0</p>
+                        <span class="stat-trend up"><i class="uil uil-arrow-up"></i>+2 new clients</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts + Messages -->
+            <div class="dash-grid">
+                <div class="section-card">
+                    <div class="section-card-header">
+                        <h3><i class="uil uil-chart"></i>Visits Overview</h3>
+                        <a class="link-more" href="#">Last 7 days</a>
+                    </div>
+                    <div class="chart-bars" id="visitsChart">
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height:42%"></div><span class="chart-bar-label">Mon</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height:60%"></div><span class="chart-bar-label">Tue</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height:50%"></div><span class="chart-bar-label">Wed</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height:78%"></div><span class="chart-bar-label">Thu</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height:66%"></div><span class="chart-bar-label">Fri</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height:88%"></div><span class="chart-bar-label">Sat</span>
+                        </div>
+                        <div class="chart-bar-wrap">
+                            <div class="chart-bar" style="height:100%"></div><span class="chart-bar-label">Sun</span>
+                        </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="legend-color"
+                                style="background:#00d0ff"></span>Visits</span>
+                        <span class="legend-item"><span class="legend-color"
+                                style="background:#3182ce"></span>Enquiries</span>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <div class="section-card-header">
+                        <h3><i class="uil uil-envelope"></i>Recent Messages</h3>
+                        <a class="link-more" href="/pages/contact.html">View all</a>
+                    </div>
+                    <div class="msg-list">
+                        <div class="msg-item">
+                            <div class="msg-avatar">JT</div>
+                            <div class="msg-body">
+                                <b>James Taylor</b>
+                                <p>Hi, I need a new logo for my coffee brand...</p>
+                            </div>
+                            <span class="msg-time">2m ago</span>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar">SM</div>
+                            <div class="msg-body">
+                                <b>Sara Miller</b>
+                                <p>How much do you charge for a landing page?</p>
+                            </div>
+                            <span class="msg-time">1h ago</span>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar">KD</div>
+                            <div class="msg-body">
+                                <b>Kevin Doyle</b>
+                                <p>The poster design looks amazing, thank you!</p>
+                            </div>
+                            <span class="msg-time">3h ago</span>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-avatar">AL</div>
+                            <div class="msg-body">
+                                <b>Anna Lee</b>
+                                <p>Can you set up my studio tech stack next week?</p>
+                            </div>
+                            <span class="msg-time">Yesterday</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Projects -->
+            <div class="section-card">
+                <div class="section-card-header">
+                    <h3><i class="uil uil-briefcase-alt"></i>Recent Projects</h3>
+                    <a class="link-more" href="/pages/work.html">View all projects</a>
+                </div>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Service</th>
+                                <th>Client</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="project-name">
+                                        <span class="project-thumb"><i class="uil uil-palette"></i></span>
+                                        Aurora Coffee Logo
+                                    </div>
+                                </td>
+                                <td>Brand Design</td>
+                                <td>John Taylor</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>Aug 4, 2026</td>
+                                <td><button class="table-action"><i class="uil uil-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="project-name">
+                                        <span class="project-thumb alt"><i class="uil uil-image"></i></span>
+                                        Festival Flyer Set
+                                    </div>
+                                </td>
+                                <td>Poster Design</td>
+                                <td>Sara Miller</td>
+                                <td><span class="status-badge progress">In Progress</span></td>
+                                <td>Aug 6, 2026</td>
+                                <td><button class="table-action"><i class="uil uil-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="project-name">
+                                        <span class="project-thumb alt2"><i class="uil uil-browser"></i></span>
+                                        Legal Firm Website
+                                    </div>
+                                </td>
+                                <td>Web Development</td>
+                                <td>Kevin Doyle</td>
+                                <td><span class="status-badge progress">In Progress</span></td>
+                                <td>Jul 30, 2026</td>
+                                <td><button class="table-action"><i class="uil uil-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="project-name">
+                                        <span class="project-thumb alt3"><i class="uil uil-desktop"></i></span>
+                                        Studio Tech Setup
+                                    </div>
+                                </td>
+                                <td>Tech Setup</td>
+                                <td>Anna Lee</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>Aug 8, 2026</td>
+                                <td><button class="table-action"><i class="uil uil-eye"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="project-name">
+                                        <span class="project-thumb"><i class="uil uil-palette"></i></span>
+                                        Book Cover Artwork
+                                    </div>
+                                </td>
+                                <td>Poster Design</td>
+                                <td>Mark Fields</td>
+                                <td><span class="status-badge paused">Paused</span></td>
+                                <td>Jul 22, 2026</td>
+                                <td><button class="table-action"><i class="uil uil-eye"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="admin-footer">
+            &copy; 2026 Emanuel Pantaleo &middot; Admin Panel &middot; <a href="/index.html">View Site</a>
+        </footer>
+    </div>
+
+    <div class="toast" id="toast"><i class="uil uil-check-circle"></i><span id="toastText">Saved</span></div>
+
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>
