@@ -104,8 +104,8 @@ To explore this portfolio on your local machine:
 Have a project idea, need a brand makeover, or want to collaborate? Let's talk!
 
 * **Email:** [teshaemmanuel712@gmail.com](mailto:teshaemmanuel712@gmail.com)
-* **WhatsApp / Phone:** [+255 793 085 794](https://wa.me/255793085794)
-* **Portfolio Website:** Explore the live site or clone the repo!
+* **WhatsApp / Phone:** [+255 793 085 794](https://pantaleo-protifolio.netlify.app/pages/whatsapp)
+* **Portfolio Website:** [Emanuel Portifolio](https://pantaleo-protifolio.netlify.app) Explore the live site or clone the repo!
 
 ---
 
