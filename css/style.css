@@ -1893,3 +1893,80 @@ form button {
 #scrollup:hover {
     background-color: #0056b3;
 }
+
+
+.cards {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #3182ce; */
+    border-radius: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    box-sizing: border-box;
+    width: 200px;
+    height: 240px;
+    padding: 20px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 0 0 1px #001f4d,
+        0 14px 28px -14px #0056b3;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    max-width: 190px;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.line {
+    position: absolute;
+    background: #00d0ff;
+    transition: all .4s ease;
+}
+
+.top {
+    inset: 0 auto auto 0;
+    width: 0;
+    height: 2px;
+}
+
+.right {
+    inset: 0 0 auto auto;
+    width: 2px;
+    height: 0;
+    transition-delay: .15s;
+}
+
+.bottom {
+    inset: auto 0 0 auto;
+    width: 0;
+    height: 2px;
+    transition-delay: .3s;
+}
+
+.left {
+    inset: auto auto 0 0;
+    width: 2px;
+    height: 0;
+    transition-delay: .45s;
+}
+
+.card:hover .top,
+.card:hover .bottom {
+    width: 100%;
+}
+
+.card:hover .right,
+.card:hover .left {
+    height: 100%;
+}
